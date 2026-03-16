@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PYBOX ENGINE</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container main-wrapper">
+
+        <header class="site-header border-bottom mb-3">
+            <div class="header-title uppercase">
+                Raw Python.<br>Pure Mechanics.
+            </div>
+            <div class="header-meta font-mono text-gray">
+                <div class="meta-item">
+                    <span class="meta-label text-black">STATUS</span>
+                    PAUSED
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label text-black">PHASE</span>
+                    PROTOTYPE
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label text-black">DATE</span>
+                    <span id="current-year"></span>
+                </div>
+            </div>
+        </header>
+
+        <section class="hero-section mb-5">
+            <div id="dynamic-logo" title="RECOMPILE">
+                </div>
+            
+            <div class="hero-subtitle uppercase text-gray border-left-red">
+                A 2D Game Engine
+            </div>
+
+            <div class="hero-shape-red"></div>
+        </section>
+
+        <main class="main-grid">
+
+            <div class="col-context">
+                <div class="section-heading">
+                    <span class="red-dot small"></span>
+                    <h2>01 / Context</h2>
+                </div>
+                <div class="border-top pt-1">
+                    <h3 class="sub-heading">The Origin</h3>
+                    <p class="text-gray text-body">
+                        Created as an aspiration to learn the complex systems behind commercial game engines. Originally started as a strictly object-oriented engine, but structural problems immediately arose regarding a lack of modularity.
+                    </p>
+                    <h3 class="sub-heading mt-1">The Evolution</h3>
+                    <p class="text-gray text-body">
+                        The solution was to incorporate a hybrid approach. The engine now utilizes a mix of data-driven and object-oriented design, built specifically to ensure ease of use, extensibility, and robust optimizations.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-details inner-grid">
+                
+                <div>
+                    <div class="section-heading">
+                        <span class="red-dot small"></span>
+                        <h2>02 / Architecture</h2>
+                    </div>
+                    <div class="border-top pt-1 height-full">
+                        <ul class="feature-list">
+                            <li>
+                                <h4 class="sub-heading-small">Hybrid ECS & OOP</h4>
+                                <p class="text-gray text-body-small">An Entity-Component-System handles dynamic data, while object-oriented design drives the main game logic. This decoupled approach resolves initial modularity bottlenecks.</p>
+                            </li>
+                            <li>
+                                <h4 class="sub-heading-small">Custom Binary Storage</h4>
+                                <p class="text-gray text-body-small">Dynamic data within the ECS architecture is serialized and managed using custom binary files, ensuring robust optimization and efficient memory access.</p>
+                            </li>
+                            <li>
+                                <h4 class="sub-heading-small">Community Mod Integration</h4>
+                                <p class="text-gray text-body-small">Designed for high extensibility. Features built-in community mod support backed by extensive documentation to maximize user engagement and customization.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="section-heading">
+                        <span class="red-dot small"></span>
+                        <h2>03 / Specifications</h2>
+                    </div>
+                    <div class="border-top pt-1 height-full">
+                        <ul class="spec-list font-mono">
+                            <li class="spec-item">
+                                <span class="spec-label text-black">LANGUAGE</span>
+                                <span class="text-gray">Python 3.13+</span>
+                            </li>
+                            <li class="spec-item">
+                                <span class="spec-label text-black">GRAPHICS</span>
+                                <span class="text-gray">Pygame</span>
+                            </li>
+                            <li class="spec-item">
+                                <span class="spec-label text-black">DATA STORAGE</span>
+                                <span class="text-gray">Custom Binary Files</span>
+                            </li>
+                            <li class="spec-item">
+                                <span class="spec-label text-black">DESIGN PATTERN</span>
+                                <span class="text-gray">Hybrid ECS / OOP</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                
+
+            </div>
+
+            <div class="col-full mt-2">
+                <div class="section-heading">
+                    <span class="red-dot small"></span>
+                    <h2>04 / Roadmap</h2>
+                </div>
+                <div class="border-top pt-1 inner-grid">
+                    <div>
+                        <h4 class="sub-heading-small">Integrated GUI Editor</h4>
+                        <p class="text-gray text-body-small">Transitioning from hard-coded scene construction to a visual, inspector-driven GUI to accelerate level design, entity configuration, and workflow efficiency.</p>
+                    </div>
+                    <div>
+                        <h4 class="sub-heading-small">OpenGL Rendering Pipeline</h4>
+                        <p class="text-gray text-body-small">Replacing the software-bound Pygame renderer with a hardware-accelerated OpenGL pipeline to support custom shaders, dynamic lighting, and significantly higher entity counts.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-full mt-2 mb-5">
+                <div class="section-heading">
+                    <span class="red-dot small"></span>
+                    <h2>05 / Syntax</h2>
+                </div>
+                <div class="code-block font-mono">
+                    <div class="code-header text-gray">
+                        <span>FILE: core_engine.py</span>
+                        <span>FORMAT: UTF-8</span>
+                    </div>
+<pre><code><span class="text-red">class</span> PyBox:
+    <span class="text-red">def</span> __init__(self):
+        <span class="text-gray"># Hybrid Architecture: ECS for data, OOP for state</span>
+        self.ecs_registry = Registry()
+        self.state_manager = StateMachine()
+
+    <span class="text-red">def</span> load_scene(self, filepath: str):
+        <span class="text-gray"># Custom binary serialization for rapid entity loading</span>
+        <span class="text-red">with</span> open(filepath, <span class="text-red">'rb'</span>) <span class="text-red">as</span> bin_file:
+            magic_number = bin_file.read(4)
+            <span class="text-red">if</span> magic_number != <span class="text-red">b'PYBX'</span>:
+                <span class="text-red">raise</span> CorruptedSceneError(<span class="text-red">"Invalid memory signature"</span>)
+            
+            self.ecs_registry.deserialize_fast(bin_file)
+
+    <span class="text-red">def</span> execute_loop(self):
+        <span class="text-red">while</span> self.state_manager.is_running():
+            dt = self.clock.get_fixed_step()
+            self.ecs_registry.update_systems(dt)</code></pre>
+                </div>
+            </div>
+
+        </main>
+
+        <footer class="site-footer border-top">
+            <div>Engine Code: Private Repository</div>
+            <div class="footer-note">Seeking Internship Opportunities</div>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
